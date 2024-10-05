@@ -18,7 +18,7 @@ int registrar(){
     cin >>aux->documento;
     cout <<"INGRESE EL NOMBRE DEL PASAJERO"<<endl;
     cin >>aux->nombre;
-    cout <<"CUAL ES EL DESTINO DEL PASAJERO"<<endl;
+    cout <<"CUAL ES EL DESTINO DEL PASAJERO (1: LA BOCANA, 2:PIANGUITA, 3:LADRILLEROS)"<<endl;
     cin >>aux->destino;
     aux->sig=NULL;
 
@@ -36,21 +36,60 @@ int registrar(){
        {
 
        }
-       int mostrar();
-       {
-        for(aux=cab;
-        aux!=NULL;
-        aux=aux->sig);
-        {
-            cout <<"nodo" <<aux->documento<<endl;
-            cout<<"nodo"<<aux->nombre<<endl;
-            cout<<"nodo"<<aux->destino<<endl;
+       int mostrar() {
+       nodo* sig = cab;
+       
+        while(aux !=NULL) {
+
+       
+            cout <<"DOCUMENTO" <<aux->documento<<endl;
+            cout<<"NOMBRE"<<aux->nombre<<endl;
+            cout <<"DESTINO";
+            switch (aux->destino){
+                case1: cout<<"LA BOCANA";
+                break;
+                       
+             case2:cout<<"PIANGUITA";
+                 break;
+                 case3: cout<< "LADRILLEROS";
+                 break;
+            
+            default: cout<<"NO EXISTE";
+                
+            }
+            aux=aux->sig;
         }
 
 
-        }
+       }
+         int main() {
+                        int opcion;
+                        do{
+                            cout <<"MENU. 1 REGISTRAR PASAJEROS, 2. MOSTRAR PASAJEROS, 3. SALIR"<<endl;
+                                                      
+                               cout << " ESCOGE UNA OPCION: ";
+                            cin >> opcion;
+
+                            switch (opcion){
+                                case 1:
+                                registrar();
+                                break;
+                                case 2:
+                                mostrar();
+                                break;
+                                case 3:
+                                cout<<"SALIENDO DEL PROGRAMA";
+                                break;
+                            }
+                          
+                        }while (opcion !=3);
+                        {
+                            return 0;
+                        
+                        
                }
  
+}
 
-
+}
 
